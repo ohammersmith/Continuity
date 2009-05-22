@@ -7,7 +7,8 @@ namespace :build_local do
       print "File exists, exiting\n"
       exit 0
     else
-      system('touch build.pid')
+      pid = Process.pid
+      system("echo #{pid} >> build.pid")
     end
       
   end
@@ -35,6 +36,6 @@ namespace :build_local do
   
   desc "Removes the PID file"
   task :clean_up => :cucumber do
-    #Remove the PID file
+    FileUtils.rm_f 'build.pid'
   end
 end
