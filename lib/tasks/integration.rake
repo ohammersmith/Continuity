@@ -1,7 +1,4 @@
-require 'octopi'
-
-include Octopi
-
+require File.dirname(__FILE__) + "/../../config/continuity"
 namespace :build_local do
   desc "Check to see if another process is running"
   task :check_lock do
@@ -17,28 +14,22 @@ namespace :build_local do
         exit 0
       end
       
-    else
-      pid = Process.pid
-      system("echo #{pid} >> build.pid")
     end
+    
+    pid = Process.pid
+    system("echo #{pid} >> build.pid")
     
   end
   
   desc "Check to see if github has updated"
   task :check => :check_lock do
-    #Check to see if there's a new build
-    Api.authenticated_with :config => "config/github.yml" do |g|
-      user = User.find("mdwrigh2")
-      puts "Username - #{user.login}"
-      repos = user.repositories
-      repos.each do |r|
-        puts "Repository: #{r.tags}"
-      end
-      # repo = user.repository("continuity")
-      # commit = repo.commits.first
-      # puts "Commit: #{commit.id} - #{commit.message} - by #{commit.author['name']}"
+    system 'git fetch && git diff --quiet ...FETCH_HEAD' # --quiet implies --exit-code
+    new_version = $?.exitstatus
+    if !new_version
+      puts "No changes since last pull"
+      FileUtils.rm_f 'build.pid'
+      exit 0
     end
-    #Is this necessary or should I just be checking to see if there's a new version using git commands?
   end
   
   desc "Pull new build"
