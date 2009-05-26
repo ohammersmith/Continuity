@@ -1,4 +1,6 @@
 require File.dirname(__FILE__) + "/../../config/continuity"
+require 'capistrano'
+
 namespace :build_local do
   desc "Check to see if another process is running"
   task :check_lock do
@@ -23,18 +25,21 @@ namespace :build_local do
   
   desc "Check to see if github has updated"
   task :check => :check_lock do
-    system 'git fetch && git diff --quiet ...FETCH_HEAD' # --quiet implies --exit-code
+    system "cd #{$project_dir} && git fetch && git diff --quiet ...FETCH_HEAD" # --quiet implies --exit-code
     new_version = $?.exitstatus
     if !new_version
       puts "No changes since last pull"
       FileUtils.rm_f 'build.pid'
       exit 0
     end
+
   end
   
-  desc "Pull new build"
+  desc "Pull and deploy new build"
   task :deploy => :check do
-    #Deploy new build to edge
+    s = system "cd #{$project_dir} && cap #{$deployment_env} deploy"
+    exit_status = $?.exitstatus
+    puts exit_status
   end
   
   desc "Run RSpec Tests"
@@ -50,5 +55,12 @@ namespace :build_local do
   desc "Removes the PID file"
   task :clean_up => :cucumber do
     FileUtils.rm_f 'build.pid'
+  end
+  
+  desc "Installs Continuity's cronjob"
+  task :install do
+    #Consider adding a config check dependency
+    system("echo '\n */5 * * * * cd  root #{File.dirname(__FILE__)+"/../../"} && rake build_local:clean_up' >> /etc/crontab")
+    puts "Cronjob installed successfully"
   end
 end
