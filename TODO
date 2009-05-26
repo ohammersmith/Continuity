@@ -6,3 +6,4 @@
 - Write a Post-Receive Hook web service as well (Mongrel or Rack)
 - Write a check to ensure the correct gems are installed (should be able to tell RoR what the dependencies are)
 - Write a check to ensure the correct config files are in place before running build process
+- TESTING
