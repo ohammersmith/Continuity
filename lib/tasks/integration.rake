@@ -38,6 +38,7 @@ namespace :build_local do
       # commit = repo.commits.first
       # puts "Commit: #{commit.id} - #{commit.message} - by #{commit.author['name']}"
     end
+    #Is this necessary or should I just be checking to see if there's a new version using git commands?
   end
   
   desc "Pull new build"
