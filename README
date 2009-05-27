@@ -1,1 +1,4 @@
-Continuity is a Continuous Integration server that provides methods of to ensure solid blah blah blah. Readmeaupawefjaweopj
+Continuity is a Continuous Integration server that provides methods of testing each build to ensure a solid and dependable code-base.
+
+1. Create config/continuity.rb
+2. Create config/environment.rb
