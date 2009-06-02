@@ -4,7 +4,7 @@ require 'mailer'
 require 'handler'
 
 
-namespace :build_local do
+namespace :continuity do
   desc "Check to see if another process is running"
   task :check_lock do
 
@@ -33,7 +33,7 @@ namespace :build_local do
     project_dir = CONTINUITY_CONFIG['project_dir']
     s = %x[cd #{project_dir} && git fetch && git diff --quiet ...FETCH_HEAD] # --quiet implies --exit-code
     new_version = $?.exitstatus
-    if !new_version
+    if new_version == 0
       puts "No changes since last pull"
       FileUtils.rm_f 'build.pid'
       exit 0
@@ -54,7 +54,10 @@ namespace :build_local do
     s = %x[cd #{project_dir} && #{deploy}]
     exit_status = $?.exitstatus
     email_address = %x[git log HEAD..FETCH_HEAD|egrep -o [a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+]
+    email_address = "mwright@futuresinc.com"
     step = "\"deploy\""
+    puts "Deploy Status: " + $?.exitstatus.to_s
+    sleep 5
     handler.handle_status(exit_status, step, s, email_address)    
     email_address = %x[cd #{project_dir} && git log -1..HEAD|egrep -o [a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+]
     email_address = "mwright@futuresinc.com"
@@ -96,7 +99,7 @@ namespace :build_local do
   end
   
   desc "Checks for new build, deploys and runs tests and e-mails upon failure"
-  task :continuity => :clean_up do
+  task :build_local => :clean_up do
     #Nothing yet
   end
   
@@ -113,7 +116,7 @@ namespace :build_local do
   desc "Installs Continuity's cronjob"
   task :install do
     #Consider adding a config check dependency
-    s = %x[echo '\n */5 * * * * cd  root #{File.dirname(__FILE__)+"/../../"} && rake build_local:continuity' >> /etc/crontab]
+    s = %x[echo '\n */5 * * * * cd  root #{File.dirname(__FILE__)+"/../../"} && rake continuity:build_local' >> /etc/crontab]
     if s.match('.*Permission.*Denied.*')
       puts "Installation failed, check your permissions."
     else
