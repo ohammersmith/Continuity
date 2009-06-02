@@ -7,6 +7,7 @@ require 'handler'
 namespace :build_local do
   desc "Check to see if another process is running"
   task :check_lock do
+
     #Check for pid file, if one does not exist, write to it
     if File.exists?('build.pid') 
       
@@ -44,38 +45,40 @@ namespace :build_local do
   desc "Pull and deploy new build"
   task :deploy => [:check, :environment] do
     project_dir = CONTINUITY_CONFIG['project_dir']
+    deploy = CONTINUITY_CONFIG['deploy_command']
+    env = CONTINUITY_CONFIG['environment']
     handler = Handler.new
     
     #### git pull new commits ###
     email_address = "mwright@futuresinc.com"
-    s = %x[cd #{project_dir} && git pull]
+    s = %x[cd #{project_dir} && #{deploy}]
     exit_status = $?.exitstatus
     email_address = %x[git log HEAD..FETCH_HEAD|egrep -o [a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+]
-    step = "\"git pull\""
+    step = "\"deploy\""
     handler.handle_status(exit_status, step, s, email_address)    
     email_address = %x[cd #{project_dir} && git log -1..HEAD|egrep -o [a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+]
     email_address = "mwright@futuresinc.com"
     
     ### git submodule update --init ###
-    step = "git submodule update"
+    step = "\"git submodule update\""
     s = %x[cd #{project_dir} && git submodule update --init]
     exit_status = $?.exitstatus
     handler.handle_status(exit_status, step, s, email_address)
     
     ### rake db:migrate:reset ###
-    step = "rake db:migrate:reset"
+    step = "\"rake db:migrate:reset\""
     s = %x[ cd #{project_dir} && rake RAILS_ENV=#{env} db:migrate:reset]
     exit_status = $?.exitstatus
     handler.handle_status(exit_status, step, s, email_address)
     
     ### rake:spec ###
-    step = "rake spec"
+    step = "\"rake spec\""
     s = %x[ cd #{project_dir} && rake test spec]
     exit_status = $?.exitstatus
     handler.handle_status(exit_status, step, s, email_address)
     
     ### rake features:default ###
-    step = "rake features:default"
+    step = "\"rake features:default\""
     s = %x[ cd #{project_dir} && rake features:default]
     exit_status = $?.exitstatus
     handler.handle_status(exit_status, step, s, email_address)
@@ -83,14 +86,20 @@ namespace :build_local do
     ### rake features:selenium
   end
   
-  desc "Removes the PID file"
-  task :clean_up => :cucumber do
+  desc "Cleans up after CI has been run (automatically run)"
+  task :clean_up => :deploy do
     email = "mwright@futuresinc.com"
     step = "success"
     issue = "None!"
     Notifier.deliver_mail(email, step, issue)
     FileUtils.rm_f 'build.pid'
   end
+  
+  desc "Checks for new build, deploys and runs tests and e-mails upon failure"
+  task :continuity => :clean_up do
+    #Nothing yet
+  end
+  
   
   desc "Test e-mail"
   task :email_test => :environment do
@@ -104,7 +113,7 @@ namespace :build_local do
   desc "Installs Continuity's cronjob"
   task :install do
     #Consider adding a config check dependency
-    s = %x[echo '\n */5 * * * * cd  root #{File.dirname(__FILE__)+"/../../"} && rake build_local:clean_up' >> /etc/crontab]
+    s = %x[echo '\n */5 * * * * cd  root #{File.dirname(__FILE__)+"/../../"} && rake build_local:continuity' >> /etc/crontab]
     if s.match('.*Permission.*Denied.*')
       puts "Installation failed, check your permissions."
     else

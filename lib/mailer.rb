@@ -8,12 +8,11 @@
 
 require 'rubygems'
 require 'action_mailer'
-require File.dirname(__FILE__) + "/../config/continuity"
 class Notifier < ActionMailer::Base
   def mail(recipient, step, issue)
     # CONTINUITY_CONFIG = YAML.load_file("#{RAILS_ROOT}/config/continuity.yml")
     
-    @recipients = overseers
+    @recipients = CONTINUITY_CONFIG['overseers']
     @recipients.push(recipient)
     @subject = "Project broken at the #{step} step"
     @step = step
