@@ -117,7 +117,7 @@ namespace :continuity do
   task :install do
     #Consider adding a config check dependency
     s = %x[echo '\n */5 * * * * cd  root #{File.dirname(__FILE__)+"/../../"} && rake continuity:build_local' >> /etc/crontab]
-    if s.match('.*Permission.*Denied.*') or $?.exitstatus != 0
+    if $?.exitstatus != 0
       puts "Installation failed, check your permissions."
     else
       puts "Cronjob installed successfully"
