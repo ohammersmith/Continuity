@@ -1,4 +1,4 @@
 config/github.yml
 config/continuity.rb
-log/*
+log/*.*
 config/continuity.yml
