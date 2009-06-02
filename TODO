@@ -1,7 +1,6 @@
 - Finish writing the rake tasks
 - Write a rake task to install
 - Create a webserver that displays a builds success or fail
-- Create a model to send e-mails (ActionMailer)
 - Write the README
 - Write a Post-Receive Hook web service as well (Mongrel or Rack)
 - Write a check to ensure the correct gems are installed (should be able to tell RoR what the dependencies are)

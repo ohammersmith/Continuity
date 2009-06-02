@@ -10,12 +10,15 @@ require 'rubygems'
 require 'action_mailer'
 require File.dirname(__FILE__) + "/../config/continuity"
 class Notifier < ActionMailer::Base
-  def mail(recipients, step, issue)
-    @recipients = recipients
+  def mail(recipient, step, issue)
+    # CONTINUITY_CONFIG = YAML.load_file("#{RAILS_ROOT}/config/continuity.yml")
+    
+    @recipients = overseers
+    @recipients.push(recipient)
     @subject = "Project broken at the #{step} step"
     @step = step
     @issue = issue
-    @from = "ci@futuresinc.com" #Change this to be more modular
+    @from = CONTINUITY_CONFIG['mail_from']
   end
 
 end

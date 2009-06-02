@@ -1,4 +1,0 @@
-## Continuity Config File
-
-$project_dir = '/Users/mwright/Work/protopipe'
-$deployment_env = ''

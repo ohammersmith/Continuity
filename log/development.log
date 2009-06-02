@@ -98,3 +98,14 @@ Congratulations! You appear to have broken the build. Your recent commit seems t
 
 (in /Users/mwright/Work/protopipe)
 Couldn't drop db/development.sqlite3 : #<Mysql::Error: Incorrect database name 'db/development.sqlite3'>
+Sent mail to mwright@futuresinc.com
+
+From: ci@futuresinc.com
+To: mwright@futuresinc.com
+Subject: Project broken at the rake db:migrate:reset step
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Congratulations! You appear to have broken the build. Your recent commit seems to have broken the build at the rake db:migrate:reset step.
+
+(in /Users/mwright/Work/protopipe)

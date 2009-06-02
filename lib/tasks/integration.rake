@@ -1,7 +1,8 @@
-require File.dirname(__FILE__) + "/../../config/continuity"
 require 'capistrano'
 require 'action_mailer'
 require 'mailer'
+require 'handler'
+
 
 namespace :build_local do
   desc "Check to see if another process is running"
@@ -13,6 +14,7 @@ namespace :build_local do
         puts "Process has been running for >2 hours. Killing process."
         kpid = File.open('build.pid').read
         system("kill -9 #{kpid}")
+        FileUtils.rm_f 'build.pid'
       else
         puts "File exists, exiting"
         exit 0
@@ -26,8 +28,9 @@ namespace :build_local do
   end
   
   desc "Check to see if github has updated"
-  task :check => :check_lock do
-    s = %x[cd #{$project_dir} && git fetch && git diff --quiet ...FETCH_HEAD] # --quiet implies --exit-code
+  task :check => [:check_lock, :environment] do
+    project_dir = CONTINUITY_CONFIG['project_dir']
+    s = %x[cd #{project_dir} && git fetch && git diff --quiet ...FETCH_HEAD] # --quiet implies --exit-code
     new_version = $?.exitstatus
     if !new_version
       puts "No changes since last pull"
@@ -40,48 +43,44 @@ namespace :build_local do
   
   desc "Pull and deploy new build"
   task :deploy => [:check, :environment] do
-    s = %x[cd #{$project_dir} && git pull]
+    project_dir = CONTINUITY_CONFIG['project_dir']
+    handler = Handler.new
+    
+    #### git pull new commits ###
+    email_address = "mwright@futuresinc.com"
+    s = %x[cd #{project_dir} && git pull]
     exit_status = $?.exitstatus
     email_address = %x[git log HEAD..FETCH_HEAD|egrep -o [a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+]
     step = "\"git pull\""
-    if exit_status != 0
-      Notifier.deliver_mail(email_address, step, s)
-      FileUtils.rm_f 'build.pid'
-      exit 1
-    end
-    
-    email_address = %x[cd #{$project_dir} && git log -1..HEAD|egrep -o [a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+]
+    handler.handle_status(exit_status, step, s, email_address)    
+    email_address = %x[cd #{project_dir} && git log -1..HEAD|egrep -o [a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+]
     email_address = "mwright@futuresinc.com"
     
-    
+    ### git submodule update --init ###
     step = "git submodule update"
-    s = %x[cd #{$project_dir} && git submodule update --init]
+    s = %x[cd #{project_dir} && git submodule update --init]
     exit_status = $?.exitstatus
-    if exit_status != 0
-      Notifier.deliver_mail(email_address, step, s)
-      FileUtils.rm_f 'build.pid'
-      exit 1
-    end
+    handler.handle_status(exit_status, step, s, email_address)
     
+    ### rake db:migrate:reset ###
     step = "rake db:migrate:reset"
-    s = %x[ cd #{$project_dir} && rake db:migrate:reset]
+    s = %x[ cd #{project_dir} && rake RAILS_ENV=#{env} db:migrate:reset]
     exit_status = $?.exitstatus
-    if exit_status != 0
-      
-      Notifier.deliver_mail(email_address, step, s)
-      FileUtils.rm_f 'build.pid'
-      exit 1
-    end
-  end
-  
-  desc "Run RSpec Tests"
-  task :spec => :deploy do
-    #Run RSpec tests
-  end
-  
-  desc "Run Cucumber Tests"
-  task :cucumber => :spec do
-    #Run Cucumber tests
+    handler.handle_status(exit_status, step, s, email_address)
+    
+    ### rake:spec ###
+    step = "rake spec"
+    s = %x[ cd #{project_dir} && rake test spec]
+    exit_status = $?.exitstatus
+    handler.handle_status(exit_status, step, s, email_address)
+    
+    ### rake features:default ###
+    step = "rake features:default"
+    s = %x[ cd #{project_dir} && rake features:default]
+    exit_status = $?.exitstatus
+    handler.handle_status(exit_status, step, s, email_address)
+    
+    ### rake features:selenium
   end
   
   desc "Removes the PID file"
@@ -112,4 +111,6 @@ namespace :build_local do
       puts "Cronjob installed successfully"
     end
   end
+  
+  
 end
