@@ -53,6 +53,7 @@ namespace :continuity do
     s = %x[cd #{project_dir} && #{deploy}]
     system("echo #{s} >> deploy.log")
     exit_status = $?.exitstatus
+    system("echo #{exit_status} >> deploy.log")
     email_address = %x[git log HEAD..FETCH_HEAD|egrep -o [a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+]
     step = "\"deploy\""
     handler.handle_status(exit_status, step, s, email_address)    
@@ -71,7 +72,7 @@ namespace :continuity do
     handler.handle_status(exit_status, step, s, email_address)
     
     ### rake:spec ###
-    step = "\"rake spec\""
+    step = "\"rake test spec\""
     s = %x[ cd #{project_dir} && rake test spec]
     exit_status = $?.exitstatus
     handler.handle_status(exit_status, step, s, email_address)
