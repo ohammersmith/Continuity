@@ -33,7 +33,7 @@ namespace :continuity do
     project_dir = CONTINUITY_CONFIG['project_dir']
     s = %x[cd #{project_dir} && git fetch && git diff --quiet ...FETCH_HEAD] # --quiet implies --exit-code
     new_version = $?.exitstatus
-    if new_version == 0
+    if new_version == 0 and !File.exists?('force')
       puts "No changes since last pull"
       FileUtils.rm_f 'build.pid'
       exit 0
@@ -50,16 +50,13 @@ namespace :continuity do
     handler = Handler.new
     
     #### git pull new commits ###
-    email_address = "mwright@futuresinc.com"
     s = %x[cd #{project_dir} && #{deploy}]
+    puts s
     exit_status = $?.exitstatus
     email_address = %x[git log HEAD..FETCH_HEAD|egrep -o [a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+]
-    email_address = "mwright@futuresinc.com"
     step = "\"deploy\""
-    puts s
     handler.handle_status(exit_status, step, s, email_address)    
     email_address = %x[cd #{project_dir} && git log -1..HEAD|egrep -o [a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+]
-    email_address = "mwright@futuresinc.com"
     
     ### git submodule update --init ###
     step = "\"git submodule update\""
@@ -90,7 +87,7 @@ namespace :continuity do
   
   desc "Cleans up after CI has been run (automatically run)"
   task :clean_up => :deploy do
-    email = "mwright@futuresinc.com"
+    email = ""
     step = "success"
     issue = "None!"
     Notifier.deliver_mail(email, step, issue)
@@ -105,7 +102,7 @@ namespace :continuity do
   
   desc "Test e-mail"
   task :email_test => :environment do
-    email = "mwright@futuresinc.com"
+    email = CONTINUITY_CONFIG['overseers']
     step = "test"
     issue = "Test Works!"
     Notifier.deliver_mail(email, step, issue)
@@ -123,5 +120,8 @@ namespace :continuity do
     end
   end
   
+  task :test do
+    puts RAILS_ROOT+"/force"
+  end
   
 end

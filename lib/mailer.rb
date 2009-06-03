@@ -13,7 +13,9 @@ class Notifier < ActionMailer::Base
     # CONTINUITY_CONFIG = YAML.load_file("#{RAILS_ROOT}/config/continuity.yml")
     
     @recipients = CONTINUITY_CONFIG['overseers']
-    @recipients.push(recipient)
+    if recipient != ""
+      @recipients.push(recipient)
+    end
     @subject = "Project broken at the #{step} step"
     @step = step
     @issue = issue
