@@ -56,8 +56,7 @@ namespace :continuity do
     email_address = %x[git log HEAD..FETCH_HEAD|egrep -o [a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+]
     email_address = "mwright@futuresinc.com"
     step = "\"deploy\""
-    puts "Deploy Status: " + $?.exitstatus.to_s
-    sleep 5
+    puts s
     handler.handle_status(exit_status, step, s, email_address)    
     email_address = %x[cd #{project_dir} && git log -1..HEAD|egrep -o [a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+]
     email_address = "mwright@futuresinc.com"
