@@ -51,7 +51,7 @@ namespace :continuity do
     
     #### git pull new commits ###
     s = %x[cd #{project_dir} && #{deploy}]
-    puts s
+    system("echo #{s} >> deploy.log")
     exit_status = $?.exitstatus
     email_address = %x[git log HEAD..FETCH_HEAD|egrep -o [a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+]
     step = "\"deploy\""
