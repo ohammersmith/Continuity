@@ -1,3 +1,10 @@
-Congratulations! You appear to have broken the build. Your recent commit seems to have broken the build at the <%= @step %> step.
+<% if @step != success %>
+	Congratulations! You appear to have broken the build. Your recent commit seems to have broken the build at the <%= @step %> step.
 
-<%= @issue %>
+	<%= @issue %>
+
+<% end %>
+
+<% if @step == "success" %>
+	Build was successful!
+<% end %>

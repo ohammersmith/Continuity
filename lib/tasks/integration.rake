@@ -103,17 +103,17 @@ namespace :continuity do
   
   desc "Test e-mail"
   task :email_test => :environment do
-    email = CONTINUITY_CONFIG['overseers']
+    email = ""
     step = "test"
     issue = "Test Works!"
     Notifier.deliver_mail(email, step, issue)
   end
   
   
-  desc "Installs Continuity's cronjob"
+  desc "Installs Continuity's cronjob as rails user"
   task :install do
     #Consider adding a config check dependency
-    s = %x[echo '\n */5 * * * *   root cd #{File.dirname(__FILE__)+"/../../"} && rake continuity:build_local' >> /etc/crontab]
+    s = %x[echo '\n */5 * * * *   rails cd #{File.dirname(__FILE__)+"/../../"} && rake continuity:build_local' >> /etc/crontab]
     if $?.exitstatus != 0
       puts "Installation failed, check your permissions."
     else

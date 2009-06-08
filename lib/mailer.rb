@@ -17,6 +17,9 @@ class Notifier < ActionMailer::Base
       @recipients.push(recipient)
     end
     @subject = "Project broken at the #{step} step"
+    if step == "success"
+      @subject = "Build was successful"
+    end
     @step = step
     @issue = issue
     @from = CONTINUITY_CONFIG['mail_from']
