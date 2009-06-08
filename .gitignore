@@ -2,3 +2,4 @@ config/github.yml
 config/continuity.rb
 log/*.*
 config/continuity.yml
+deploy.log

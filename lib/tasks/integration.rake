@@ -121,7 +121,7 @@ namespace :continuity do
     end
   end
   
-  task :test do
+  task :test_prepare do
     puts RAILS_ROOT+"/force"
   end
   
