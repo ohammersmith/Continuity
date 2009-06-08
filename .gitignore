@@ -3,3 +3,4 @@ config/continuity.rb
 log/*.*
 config/continuity.yml
 deploy.log
+force

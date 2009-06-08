@@ -1,4 +1,4 @@
-<% if @step != success %>
+<% if @step != "success" %>
 	Congratulations! You appear to have broken the build. Your recent commit seems to have broken the build at the <%= @step %> step.
 
 	<%= @issue %>

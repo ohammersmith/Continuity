@@ -54,10 +54,12 @@ namespace :continuity do
     exit_status = $?.exitstatus
     system("echo #{s} >> deploy.log")
     system("echo #{exit_status} >> deploy.log")
-    email_address = %x[git log HEAD..FETCH_HEAD|egrep -o [a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+]
+    email_address = %x[git log HEAD..FETCH_HEAD|egrep -o -m1 [a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+]
     step = "\"deploy\""
     handler.handle_status(exit_status, step, s, email_address)    
-    email_address = %x[cd #{project_dir} && git log -1..HEAD|egrep -o [a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+]
+    #Breaks when the compiled version of grep does not support -m, and a git merge was performed due to the git@github.com:/user/repo line matching
+    email_address = %x[cd #{project_dir} && git log -1..HEAD|egrep -o -m1 [a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+]
+    
     
     ### git submodule update --init ###
     step = "\"git submodule update\""
@@ -122,7 +124,7 @@ namespace :continuity do
   end
   
   task :test_prepare do
-    puts RAILS_ROOT+"/force"
+    system("touch force")
   end
   
 end
