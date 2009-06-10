@@ -2,6 +2,7 @@ require 'capistrano'
 require 'action_mailer'
 require 'mailer'
 require 'handler'
+require 'git'
 
 
 namespace :continuity do
@@ -48,12 +49,11 @@ namespace :continuity do
     deploy = CONTINUITY_CONFIG['deploy_command']
     env = CONTINUITY_CONFIG['environment']
     handler = Handler.new
+    g = Git.open(project_dir, :log => Logger.new('integration.log'))
     
     #### git pull new commits ###
     s = %x[cd #{project_dir} && #{deploy}]
     exit_status = $?.exitstatus
-    system("echo #{s} >> deploy.log")
-    system("echo #{exit_status} >> deploy.log")
     email_address = %x[git log HEAD..FETCH_HEAD|egrep -o -m1 [a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+]
     step = "\"deploy\""
     handler.handle_status(exit_status, step, s, email_address)    
