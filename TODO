@@ -1,5 +1,3 @@
-- Finish writing the rake tasks
-- Write a rake task to install
 - Create a webserver that displays a builds success or fail
 - Write the README
 - Write a Post-Receive Hook web service as well (Mongrel or Rack)

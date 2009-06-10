@@ -2,7 +2,6 @@ require 'capistrano'
 require 'action_mailer'
 require 'mailer'
 require 'handler'
-require 'git'
 
 
 namespace :continuity do
@@ -39,6 +38,9 @@ namespace :continuity do
       FileUtils.rm_f 'build.pid'
       exit 0
     end
+    if File.exists?('deploy_broken')
+      exit 0
+    end
 
 
   end
@@ -49,16 +51,21 @@ namespace :continuity do
     deploy = CONTINUITY_CONFIG['deploy_command']
     env = CONTINUITY_CONFIG['environment']
     handler = Handler.new
-    g = Git.open(project_dir, :log => Logger.new('integration.log'))
+
     
     #### git pull new commits ###
     s = %x[cd #{project_dir} && #{deploy}]
     exit_status = $?.exitstatus
-    email_address = %x[git log HEAD..FETCH_HEAD|egrep -o -m1 [a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+]
+    email_address = %x[git log  --pretty=format:%ae FETCH_HEAD~1..FETCH_HEAD]
     step = "\"deploy\""
+    if exit_status != 0
+      system("echo '#{s}' >> deploy_broken")
+    end
     handler.handle_status(exit_status, step, s, email_address)    
     #Breaks when the compiled version of grep does not support -m, and a git merge was performed due to the git@github.com:/user/repo line matching
-    email_address = %x[cd #{project_dir} && git log -1..HEAD|egrep -o -m1 [a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+]
+    email_address = %x[cd #{project_dir} && git log --pretty=format:%ae -1..HEAD]
+    puts email_address
+    email_address = "mwright@futuresinc.com"
     
     
     ### git submodule update --init ###

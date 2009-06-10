@@ -1,0 +1,1024 @@
+# Logfile created on Wed Jun 10 13:04:48 -0400 2009 by /
+Starting Git
+Starting Git
+git log '--pretty=raw' '-30'  2>&1
+commit 63dd77cb4372995fe6cb0a5b066031619b6d64a6
+tree 7d50f36a94c153592264c60e93cd81e19ece1daf
+parent 3e6ab5bc452c49c1c981ae187cfcbfca89df7273
+author Tom Harris <thomas.e.harris@gmail.com> 1244236383 -0400
+committer Tom Harris <thomas.e.harris@gmail.com> 1244238338 -0400
+
+    added stories for job invitations
+
+commit 3e6ab5bc452c49c1c981ae187cfcbfca89df7273
+tree e29602180c72e03d2f947cd017f2fb3d0b4753bb
+parent e48579bfe6af63ef8d34c9ddd798978d8d2d4259
+author Tom Harris <thomas.e.harris@gmail.com> 1244236318 -0400
+committer Tom Harris <thomas.e.harris@gmail.com> 1244236318 -0400
+
+    added delete action to job invitations
+
+commit e48579bfe6af63ef8d34c9ddd798978d8d2d4259
+tree e747c0e9c072aad78e98f4dfd53e7fdf185c92a9
+parent f4794ea146904c41f486fcb9dab833f51427dac0
+author Tom Harris <thomas.e.harris@gmail.com> 1244209578 -0400
+committer Tom Harris <thomas.e.harris@gmail.com> 1244209578 -0400
+
+    fixed connections spec using invalid factory
+
+commit f4794ea146904c41f486fcb9dab833f51427dac0
+tree b7b96541485c7d43be59593c8fde4924afc4463b
+parent c2dc329d5aaad27ffd427d0b6a7c8df7acb81059
+author Tom Harris <thomas.e.harris@gmail.com> 1244209013 -0400
+committer Tom Harris <thomas.e.harris@gmail.com> 1244209053 -0400
+
+    added job invitation #index action to display a user's invitations
+
+commit c2dc329d5aaad27ffd427d0b6a7c8df7acb81059
+tree d891158ade086875317c66b07993a8d48e3e1871
+parent 093d56c15a73c6e33948eda1a72819eb7e2f612e
+author Tom Harris <thomas.e.harris@gmail.com> 1244208917 -0400
+committer Tom Harris <thomas.e.harris@gmail.com> 1244209052 -0400
+
+    fixed references to poster field
+
+commit 093d56c15a73c6e33948eda1a72819eb7e2f612e
+tree dc6bfa795968fdf60959fa77060d56a7f9ab6c5f
+parent 2b8626e5b67a3dccf9b0b6a7ca30c9848918f7d7
+author Tom Harris <thomas.e.harris@gmail.com> 1244208668 -0400
+committer Tom Harris <thomas.e.harris@gmail.com> 1244209052 -0400
+
+    added a little more entropy to the email addresses created in the user factory
+
+commit 2b8626e5b67a3dccf9b0b6a7ca30c9848918f7d7
+tree 2d87e09723f03171f5e0af7138a1c641e0bc7979
+parent 2419ffda02227968e05c72d8688cc9150d7742cb
+author Tom Harris <thomas.e.harris@gmail.com> 1244131926 -0400
+committer Tom Harris <thomas.e.harris@gmail.com> 1244209052 -0400
+
+    added ability for companies to send invites for job posts
+
+commit 2419ffda02227968e05c72d8688cc9150d7742cb
+tree f3f941f3d451506238c7c9c7dc6b1949fcfa1232
+parent 3952bda90d00e6f3e41bcec1d6b2a66c8803de33
+author Tom Harris <thomas.e.harris@gmail.com> 1244120735 -0400
+committer Tom Harris <thomas.e.harris@gmail.com> 1244209052 -0400
+
+    removed unneeded fixture
+
+commit 3952bda90d00e6f3e41bcec1d6b2a66c8803de33
+tree 8f3025b6d9dccf5291d0615e970daa541d01d7e5
+parent f9d6571a3bffdd044a708ea5febb681ad245869c
+author Tom Harris <thomas.e.harris@gmail.com> 1244055977 -0400
+committer Tom Harris <thomas.e.harris@gmail.com> 1244209052 -0400
+
+    added invitation model
+
+commit f9d6571a3bffdd044a708ea5febb681ad245869c
+tree d258e56b61ffd2fcc6ad93d34f45b01b76d8f6dc
+parent 91202a5f1b61b7e1372f27c0d5580fade0ea006d
+author Tom Harris <thomas.e.harris@gmail.com> 1244037975 -0400
+committer Tom Harris <thomas.e.harris@gmail.com> 1244209052 -0400
+
+    fixed breakage from renaming the user_bare factory to user
+
+commit 91202a5f1b61b7e1372f27c0d5580fade0ea006d
+tree ec26d2dc1d6aaa43c560bd728c212529c851df5d
+parent 23bd511d53e17e8d870846d84b3ed83f597ca50e
+author Tom Harris <thomas.e.harris@gmail.com> 1244036732 -0400
+committer Tom Harris <thomas.e.harris@gmail.com> 1244209051 -0400
+
+    added index action to users;
+    temporary measure to be able to find users to connect to
+
+commit 23bd511d53e17e8d870846d84b3ed83f597ca50e
+tree 0010b83dddd7fd9a73723a31c0ce79939e641d3c
+parent 01c6e4e16dcdbe2f667bf7973b64d373ae705688
+author Otto Hammersmith <otto.hammersmith@gmail.com> 1244152904 -0400
+committer Otto Hammersmith <otto.hammersmith@gmail.com> 1244152904 -0400
+
+    Removed the remove link for images that was breaking the template.  We (royal) have decided that it isn't that important.
+
+commit 01c6e4e16dcdbe2f667bf7973b64d373ae705688
+tree 670b8d7f26c890600a4708840e768249c1ce29f1
+parent 212002673183923db91dd440c7a4d958ad9ae0e3
+author Otto Hammersmith <otto.hammersmith@gmail.com> 1244148192 -0400
+committer Otto Hammersmith <otto.hammersmith@gmail.com> 1244148192 -0400
+
+    Putting in a lame test to at least have some sort of validation vs a commented out broken validation .
+
+commit 212002673183923db91dd440c7a4d958ad9ae0e3
+tree 93cdb52a96e29390d12428dad9a3f045d4540d55
+parent bc216f8f4b83e490694cd5a5a8da04a208faacb7
+author Otto Hammersmith <otto.hammersmith@gmail.com> 1244148070 -0400
+committer Otto Hammersmith <otto.hammersmith@gmail.com> 1244148070 -0400
+
+    Fixed timing failure with the forum posting scenario.
+
+commit bc216f8f4b83e490694cd5a5a8da04a208faacb7
+tree eef4f484038cd3fa936affcc699c7fb40c613f24
+parent 6d8a9a4598b6d2482fa013c455fc7d2e401a4863
+author Otto Hammersmith <otto.hammersmith@gmail.com> 1244146420 -0400
+committer Otto Hammersmith <otto.hammersmith@gmail.com> 1244147489 -0400
+
+    Cleaning up the last of the pending scenarios.
+
+commit 6d8a9a4598b6d2482fa013c455fc7d2e401a4863
+tree bf995936d42bfabecda60c54b49b64290a4ebfab
+parent 2e902c3b2082ac5808c8d259278752a08048acaa
+author Tom Harris <thomas.e.harris@gmail.com> 1244145542 -0400
+committer Tom Harris <thomas.e.harris@gmail.com> 1244145542 -0400
+
+    added construction to non-done community pieces
+
+commit 2e902c3b2082ac5808c8d259278752a08048acaa
+tree a3f412ad74d63a6bf5035117f5fd19ed83ecbc90
+parent 590392755664c59447e5a4a224b8a4681980dc66
+author James <jzuo@futuresinc.com> 1243975468 -0400
+committer Tom Harris <thomas.e.harris@gmail.com> 1244140001 -0400
+
+    Fix bug: no need for the new portfolio page.
+    
+    Signed-off-by: Tom Harris <thomas.e.harris@gmail.com>
+
+commit 590392755664c59447e5a4a224b8a4681980dc66
+tree f49e0431f85960d78f27447e7e1318b7af3709d0
+parent a99f13631c0a914da612430ab2320c3005018abc
+author James <jzuo@futuresinc.com> 1243880910 -0400
+committer Tom Harris <thomas.e.harris@gmail.com> 1244140001 -0400
+
+    Fix bug: remove 'terms of use' from edit account page
+    
+    Signed-off-by: Tom Harris <thomas.e.harris@gmail.com>
+
+commit a99f13631c0a914da612430ab2320c3005018abc
+tree ce4c3a2bd91f37085a15d48d62ef36cb92a49155
+parent cbbaa07bfacdb73b0989b3c0caca3a671fa83677
+author James <jzuo@futuresinc.com> 1243873267 -0400
+committer Tom Harris <thomas.e.harris@gmail.com> 1244140000 -0400
+
+    Fix bugs: educator tax id should be a number
+    
+    Signed-off-by: Tom Harris <thomas.e.harris@gmail.com>
+
+commit cbbaa07bfacdb73b0989b3c0caca3a671fa83677
+tree 26d5548cca652c74fb4e83077476cdbc0c4adf4a
+parent 2a988786b4ceb128376866d745006b429c79218a
+author James <jzuo@futuresinc.com> 1243864437 -0400
+committer Tom Harris <thomas.e.harris@gmail.com> 1244140000 -0400
+
+    Fix typo errors
+    
+    Signed-off-by: Tom Harris <thomas.e.harris@gmail.com>
+
+commit 2a988786b4ceb128376866d745006b429c79218a
+tree 8e4571532122c00ffcddb0b73c38758d3b311db9
+parent 7ba646e24fc54344b4eabf1590aee72799bfb26b
+parent f8f2456ad59abcd0ab7943213417336a93703325
+author Otto Hammersmith <otto.hammersmith@gmail.com> 1244137325 -0400
+committer Otto Hammersmith <otto.hammersmith@gmail.com> 1244137325 -0400
+
+    Resolving conflicts betwen tyler and david.
+
+commit 7ba646e24fc54344b4eabf1590aee72799bfb26b
+tree e3737db3149e4a36908ee795ce04b08b4feb79ad
+parent e4a804fa7efe5082ede23ee7044c78716577a7ff
+parent 2ed8f62d9f4e530f6e8437754f3948cd1106ea20
+author Otto Hammersmith <otto.hammersmith@gmail.com> 1244136902 -0400
+committer Otto Hammersmith <otto.hammersmith@gmail.com> 1244136902 -0400
+
+    Merge commit 'tyler/master'
+
+commit e4a804fa7efe5082ede23ee7044c78716577a7ff
+tree 3b3b05a7b633c92f86ffa791925cb3b6dd29ab20
+parent 896d5c830efc1f11f21fdb1d0bdff30f1f8a4dfa
+author Michael Wright <mwright@24-iMac-Workstation.local> 1244133566 -0400
+committer Michael Wright <mwright@24-iMac-Workstation.local> 1244133566 -0400
+
+    Removed test spec from before deploy:symlink
+
+commit 2ed8f62d9f4e530f6e8437754f3948cd1106ea20
+tree a5a01fc2342f0933d047cac661e79ff8e83fcd34
+parent 02506db6df8d0dca1f430d51e179efa1292de7bb
+author Tyler Boyd <tboyd47@gmail.com> 1244066939 -0400
+committer Tyler Boyd <tboyd47@gmail.com> 1244129355 -0400
+
+    another change to fix the [...,...] problem
+
+commit 02506db6df8d0dca1f430d51e179efa1292de7bb
+tree fefe381544a7675523c1803c6bec68f4e6cad04c
+parent f9aad746ac99f7e9a46af6cb174e2dce6430fc76
+author Tyler Boyd <tboyd47@gmail.com> 1244063050 -0400
+committer Tyler Boyd <tboyd47@gmail.com> 1244129355 -0400
+
+    fix specs
+
+commit f9aad746ac99f7e9a46af6cb174e2dce6430fc76
+tree 81cc64bb0742a8de7aa15281865f653cb5cd8e0f
+parent 3a6ec2f8c55614b78bdada2f8e96116b1b75f3b9
+author Tyler Boyd <tboyd47@gmail.com> 1243882787 -0400
+committer Tyler Boyd <tboyd47@gmail.com> 1244129354 -0400
+
+    simplified SECTIONS constants in portfolio.rb
+
+commit 3a6ec2f8c55614b78bdada2f8e96116b1b75f3b9
+tree 55673d1c984a8096f3ac1da61b5b2edf26fa6bff
+parent 81c3b71b9558e62dd29327f51052a34336e2bdb7
+author Tyler Boyd <tboyd47@gmail.com> 1244056069 -0400
+committer Tyler Boyd <tboyd47@gmail.com> 1244129354 -0400
+
+    removed instances where we match database queries to [..., ...]  using == because it fails when the order is different.
+
+commit 81c3b71b9558e62dd29327f51052a34336e2bdb7
+tree 80071364d8b7706d511c4a9bfcb8eb7e2ef624dc
+parent d795ccf087b303ac45c1bff5a594690cc8262062
+author Tyler Boyd <tboyd47@gmail.com> 1243875437 -0400
+committer Tyler Boyd <tboyd47@gmail.com> 1244129354 -0400
+
+    added html encoding in portfolio page where there wasn't any
+
+commit d795ccf087b303ac45c1bff5a594690cc8262062
+tree b6231a6effbc1410cf0eb9f214caa1c2f04e4e79
+parent 5da1b61304758f6d0ba3b31779490b69021d6c96
+author Tyler Boyd <tboyd47@gmail.com> 1243872215 -0400
+committer Tyler Boyd <tboyd47@gmail.com> 1244129354 -0400
+
+    added CSS file back
+
+commit 5da1b61304758f6d0ba3b31779490b69021d6c96
+tree 35a560d80cff5c1698fe6d0989ccf9e0a1476d44
+parent cdb76c19078a67c03480b8b511be5d42c5138904
+author Tyler Boyd <tboyd47@gmail.com> 1243872195 -0400
+committer Tyler Boyd <tboyd47@gmail.com> 1244129354 -0400
+
+    deleted CSS file with uppercase letters in filename
+Starting Git
+git log '--pretty=raw' '-30'  2>&1
+commit 63dd77cb4372995fe6cb0a5b066031619b6d64a6
+tree 7d50f36a94c153592264c60e93cd81e19ece1daf
+parent 3e6ab5bc452c49c1c981ae187cfcbfca89df7273
+author Tom Harris <thomas.e.harris@gmail.com> 1244236383 -0400
+committer Tom Harris <thomas.e.harris@gmail.com> 1244238338 -0400
+
+    added stories for job invitations
+
+commit 3e6ab5bc452c49c1c981ae187cfcbfca89df7273
+tree e29602180c72e03d2f947cd017f2fb3d0b4753bb
+parent e48579bfe6af63ef8d34c9ddd798978d8d2d4259
+author Tom Harris <thomas.e.harris@gmail.com> 1244236318 -0400
+committer Tom Harris <thomas.e.harris@gmail.com> 1244236318 -0400
+
+    added delete action to job invitations
+
+commit e48579bfe6af63ef8d34c9ddd798978d8d2d4259
+tree e747c0e9c072aad78e98f4dfd53e7fdf185c92a9
+parent f4794ea146904c41f486fcb9dab833f51427dac0
+author Tom Harris <thomas.e.harris@gmail.com> 1244209578 -0400
+committer Tom Harris <thomas.e.harris@gmail.com> 1244209578 -0400
+
+    fixed connections spec using invalid factory
+
+commit f4794ea146904c41f486fcb9dab833f51427dac0
+tree b7b96541485c7d43be59593c8fde4924afc4463b
+parent c2dc329d5aaad27ffd427d0b6a7c8df7acb81059
+author Tom Harris <thomas.e.harris@gmail.com> 1244209013 -0400
+committer Tom Harris <thomas.e.harris@gmail.com> 1244209053 -0400
+
+    added job invitation #index action to display a user's invitations
+
+commit c2dc329d5aaad27ffd427d0b6a7c8df7acb81059
+tree d891158ade086875317c66b07993a8d48e3e1871
+parent 093d56c15a73c6e33948eda1a72819eb7e2f612e
+author Tom Harris <thomas.e.harris@gmail.com> 1244208917 -0400
+committer Tom Harris <thomas.e.harris@gmail.com> 1244209052 -0400
+
+    fixed references to poster field
+
+commit 093d56c15a73c6e33948eda1a72819eb7e2f612e
+tree dc6bfa795968fdf60959fa77060d56a7f9ab6c5f
+parent 2b8626e5b67a3dccf9b0b6a7ca30c9848918f7d7
+author Tom Harris <thomas.e.harris@gmail.com> 1244208668 -0400
+committer Tom Harris <thomas.e.harris@gmail.com> 1244209052 -0400
+
+    added a little more entropy to the email addresses created in the user factory
+
+commit 2b8626e5b67a3dccf9b0b6a7ca30c9848918f7d7
+tree 2d87e09723f03171f5e0af7138a1c641e0bc7979
+parent 2419ffda02227968e05c72d8688cc9150d7742cb
+author Tom Harris <thomas.e.harris@gmail.com> 1244131926 -0400
+committer Tom Harris <thomas.e.harris@gmail.com> 1244209052 -0400
+
+    added ability for companies to send invites for job posts
+
+commit 2419ffda02227968e05c72d8688cc9150d7742cb
+tree f3f941f3d451506238c7c9c7dc6b1949fcfa1232
+parent 3952bda90d00e6f3e41bcec1d6b2a66c8803de33
+author Tom Harris <thomas.e.harris@gmail.com> 1244120735 -0400
+committer Tom Harris <thomas.e.harris@gmail.com> 1244209052 -0400
+
+    removed unneeded fixture
+
+commit 3952bda90d00e6f3e41bcec1d6b2a66c8803de33
+tree 8f3025b6d9dccf5291d0615e970daa541d01d7e5
+parent f9d6571a3bffdd044a708ea5febb681ad245869c
+author Tom Harris <thomas.e.harris@gmail.com> 1244055977 -0400
+committer Tom Harris <thomas.e.harris@gmail.com> 1244209052 -0400
+
+    added invitation model
+
+commit f9d6571a3bffdd044a708ea5febb681ad245869c
+tree d258e56b61ffd2fcc6ad93d34f45b01b76d8f6dc
+parent 91202a5f1b61b7e1372f27c0d5580fade0ea006d
+author Tom Harris <thomas.e.harris@gmail.com> 1244037975 -0400
+committer Tom Harris <thomas.e.harris@gmail.com> 1244209052 -0400
+
+    fixed breakage from renaming the user_bare factory to user
+
+commit 91202a5f1b61b7e1372f27c0d5580fade0ea006d
+tree ec26d2dc1d6aaa43c560bd728c212529c851df5d
+parent 23bd511d53e17e8d870846d84b3ed83f597ca50e
+author Tom Harris <thomas.e.harris@gmail.com> 1244036732 -0400
+committer Tom Harris <thomas.e.harris@gmail.com> 1244209051 -0400
+
+    added index action to users;
+    temporary measure to be able to find users to connect to
+
+commit 23bd511d53e17e8d870846d84b3ed83f597ca50e
+tree 0010b83dddd7fd9a73723a31c0ce79939e641d3c
+parent 01c6e4e16dcdbe2f667bf7973b64d373ae705688
+author Otto Hammersmith <otto.hammersmith@gmail.com> 1244152904 -0400
+committer Otto Hammersmith <otto.hammersmith@gmail.com> 1244152904 -0400
+
+    Removed the remove link for images that was breaking the template.  We (royal) have decided that it isn't that important.
+
+commit 01c6e4e16dcdbe2f667bf7973b64d373ae705688
+tree 670b8d7f26c890600a4708840e768249c1ce29f1
+parent 212002673183923db91dd440c7a4d958ad9ae0e3
+author Otto Hammersmith <otto.hammersmith@gmail.com> 1244148192 -0400
+committer Otto Hammersmith <otto.hammersmith@gmail.com> 1244148192 -0400
+
+    Putting in a lame test to at least have some sort of validation vs a commented out broken validation .
+
+commit 212002673183923db91dd440c7a4d958ad9ae0e3
+tree 93cdb52a96e29390d12428dad9a3f045d4540d55
+parent bc216f8f4b83e490694cd5a5a8da04a208faacb7
+author Otto Hammersmith <otto.hammersmith@gmail.com> 1244148070 -0400
+committer Otto Hammersmith <otto.hammersmith@gmail.com> 1244148070 -0400
+
+    Fixed timing failure with the forum posting scenario.
+
+commit bc216f8f4b83e490694cd5a5a8da04a208faacb7
+tree eef4f484038cd3fa936affcc699c7fb40c613f24
+parent 6d8a9a4598b6d2482fa013c455fc7d2e401a4863
+author Otto Hammersmith <otto.hammersmith@gmail.com> 1244146420 -0400
+committer Otto Hammersmith <otto.hammersmith@gmail.com> 1244147489 -0400
+
+    Cleaning up the last of the pending scenarios.
+
+commit 6d8a9a4598b6d2482fa013c455fc7d2e401a4863
+tree bf995936d42bfabecda60c54b49b64290a4ebfab
+parent 2e902c3b2082ac5808c8d259278752a08048acaa
+author Tom Harris <thomas.e.harris@gmail.com> 1244145542 -0400
+committer Tom Harris <thomas.e.harris@gmail.com> 1244145542 -0400
+
+    added construction to non-done community pieces
+
+commit 2e902c3b2082ac5808c8d259278752a08048acaa
+tree a3f412ad74d63a6bf5035117f5fd19ed83ecbc90
+parent 590392755664c59447e5a4a224b8a4681980dc66
+author James <jzuo@futuresinc.com> 1243975468 -0400
+committer Tom Harris <thomas.e.harris@gmail.com> 1244140001 -0400
+
+    Fix bug: no need for the new portfolio page.
+    
+    Signed-off-by: Tom Harris <thomas.e.harris@gmail.com>
+
+commit 590392755664c59447e5a4a224b8a4681980dc66
+tree f49e0431f85960d78f27447e7e1318b7af3709d0
+parent a99f13631c0a914da612430ab2320c3005018abc
+author James <jzuo@futuresinc.com> 1243880910 -0400
+committer Tom Harris <thomas.e.harris@gmail.com> 1244140001 -0400
+
+    Fix bug: remove 'terms of use' from edit account page
+    
+    Signed-off-by: Tom Harris <thomas.e.harris@gmail.com>
+
+commit a99f13631c0a914da612430ab2320c3005018abc
+tree ce4c3a2bd91f37085a15d48d62ef36cb92a49155
+parent cbbaa07bfacdb73b0989b3c0caca3a671fa83677
+author James <jzuo@futuresinc.com> 1243873267 -0400
+committer Tom Harris <thomas.e.harris@gmail.com> 1244140000 -0400
+
+    Fix bugs: educator tax id should be a number
+    
+    Signed-off-by: Tom Harris <thomas.e.harris@gmail.com>
+
+commit cbbaa07bfacdb73b0989b3c0caca3a671fa83677
+tree 26d5548cca652c74fb4e83077476cdbc0c4adf4a
+parent 2a988786b4ceb128376866d745006b429c79218a
+author James <jzuo@futuresinc.com> 1243864437 -0400
+committer Tom Harris <thomas.e.harris@gmail.com> 1244140000 -0400
+
+    Fix typo errors
+    
+    Signed-off-by: Tom Harris <thomas.e.harris@gmail.com>
+
+commit 2a988786b4ceb128376866d745006b429c79218a
+tree 8e4571532122c00ffcddb0b73c38758d3b311db9
+parent 7ba646e24fc54344b4eabf1590aee72799bfb26b
+parent f8f2456ad59abcd0ab7943213417336a93703325
+author Otto Hammersmith <otto.hammersmith@gmail.com> 1244137325 -0400
+committer Otto Hammersmith <otto.hammersmith@gmail.com> 1244137325 -0400
+
+    Resolving conflicts betwen tyler and david.
+
+commit 7ba646e24fc54344b4eabf1590aee72799bfb26b
+tree e3737db3149e4a36908ee795ce04b08b4feb79ad
+parent e4a804fa7efe5082ede23ee7044c78716577a7ff
+parent 2ed8f62d9f4e530f6e8437754f3948cd1106ea20
+author Otto Hammersmith <otto.hammersmith@gmail.com> 1244136902 -0400
+committer Otto Hammersmith <otto.hammersmith@gmail.com> 1244136902 -0400
+
+    Merge commit 'tyler/master'
+
+commit e4a804fa7efe5082ede23ee7044c78716577a7ff
+tree 3b3b05a7b633c92f86ffa791925cb3b6dd29ab20
+parent 896d5c830efc1f11f21fdb1d0bdff30f1f8a4dfa
+author Michael Wright <mwright@24-iMac-Workstation.local> 1244133566 -0400
+committer Michael Wright <mwright@24-iMac-Workstation.local> 1244133566 -0400
+
+    Removed test spec from before deploy:symlink
+
+commit 2ed8f62d9f4e530f6e8437754f3948cd1106ea20
+tree a5a01fc2342f0933d047cac661e79ff8e83fcd34
+parent 02506db6df8d0dca1f430d51e179efa1292de7bb
+author Tyler Boyd <tboyd47@gmail.com> 1244066939 -0400
+committer Tyler Boyd <tboyd47@gmail.com> 1244129355 -0400
+
+    another change to fix the [...,...] problem
+
+commit 02506db6df8d0dca1f430d51e179efa1292de7bb
+tree fefe381544a7675523c1803c6bec68f4e6cad04c
+parent f9aad746ac99f7e9a46af6cb174e2dce6430fc76
+author Tyler Boyd <tboyd47@gmail.com> 1244063050 -0400
+committer Tyler Boyd <tboyd47@gmail.com> 1244129355 -0400
+
+    fix specs
+
+commit f9aad746ac99f7e9a46af6cb174e2dce6430fc76
+tree 81cc64bb0742a8de7aa15281865f653cb5cd8e0f
+parent 3a6ec2f8c55614b78bdada2f8e96116b1b75f3b9
+author Tyler Boyd <tboyd47@gmail.com> 1243882787 -0400
+committer Tyler Boyd <tboyd47@gmail.com> 1244129354 -0400
+
+    simplified SECTIONS constants in portfolio.rb
+
+commit 3a6ec2f8c55614b78bdada2f8e96116b1b75f3b9
+tree 55673d1c984a8096f3ac1da61b5b2edf26fa6bff
+parent 81c3b71b9558e62dd29327f51052a34336e2bdb7
+author Tyler Boyd <tboyd47@gmail.com> 1244056069 -0400
+committer Tyler Boyd <tboyd47@gmail.com> 1244129354 -0400
+
+    removed instances where we match database queries to [..., ...]  using == because it fails when the order is different.
+
+commit 81c3b71b9558e62dd29327f51052a34336e2bdb7
+tree 80071364d8b7706d511c4a9bfcb8eb7e2ef624dc
+parent d795ccf087b303ac45c1bff5a594690cc8262062
+author Tyler Boyd <tboyd47@gmail.com> 1243875437 -0400
+committer Tyler Boyd <tboyd47@gmail.com> 1244129354 -0400
+
+    added html encoding in portfolio page where there wasn't any
+
+commit d795ccf087b303ac45c1bff5a594690cc8262062
+tree b6231a6effbc1410cf0eb9f214caa1c2f04e4e79
+parent 5da1b61304758f6d0ba3b31779490b69021d6c96
+author Tyler Boyd <tboyd47@gmail.com> 1243872215 -0400
+committer Tyler Boyd <tboyd47@gmail.com> 1244129354 -0400
+
+    added CSS file back
+
+commit 5da1b61304758f6d0ba3b31779490b69021d6c96
+tree 35a560d80cff5c1698fe6d0989ccf9e0a1476d44
+parent cdb76c19078a67c03480b8b511be5d42c5138904
+author Tyler Boyd <tboyd47@gmail.com> 1243872195 -0400
+committer Tyler Boyd <tboyd47@gmail.com> 1244129354 -0400
+
+    deleted CSS file with uppercase letters in filename
+Starting Git
+git log '--pretty=raw' '-30'  2>&1
+commit 63dd77cb4372995fe6cb0a5b066031619b6d64a6
+tree 7d50f36a94c153592264c60e93cd81e19ece1daf
+parent 3e6ab5bc452c49c1c981ae187cfcbfca89df7273
+author Tom Harris <thomas.e.harris@gmail.com> 1244236383 -0400
+committer Tom Harris <thomas.e.harris@gmail.com> 1244238338 -0400
+
+    added stories for job invitations
+
+commit 3e6ab5bc452c49c1c981ae187cfcbfca89df7273
+tree e29602180c72e03d2f947cd017f2fb3d0b4753bb
+parent e48579bfe6af63ef8d34c9ddd798978d8d2d4259
+author Tom Harris <thomas.e.harris@gmail.com> 1244236318 -0400
+committer Tom Harris <thomas.e.harris@gmail.com> 1244236318 -0400
+
+    added delete action to job invitations
+
+commit e48579bfe6af63ef8d34c9ddd798978d8d2d4259
+tree e747c0e9c072aad78e98f4dfd53e7fdf185c92a9
+parent f4794ea146904c41f486fcb9dab833f51427dac0
+author Tom Harris <thomas.e.harris@gmail.com> 1244209578 -0400
+committer Tom Harris <thomas.e.harris@gmail.com> 1244209578 -0400
+
+    fixed connections spec using invalid factory
+
+commit f4794ea146904c41f486fcb9dab833f51427dac0
+tree b7b96541485c7d43be59593c8fde4924afc4463b
+parent c2dc329d5aaad27ffd427d0b6a7c8df7acb81059
+author Tom Harris <thomas.e.harris@gmail.com> 1244209013 -0400
+committer Tom Harris <thomas.e.harris@gmail.com> 1244209053 -0400
+
+    added job invitation #index action to display a user's invitations
+
+commit c2dc329d5aaad27ffd427d0b6a7c8df7acb81059
+tree d891158ade086875317c66b07993a8d48e3e1871
+parent 093d56c15a73c6e33948eda1a72819eb7e2f612e
+author Tom Harris <thomas.e.harris@gmail.com> 1244208917 -0400
+committer Tom Harris <thomas.e.harris@gmail.com> 1244209052 -0400
+
+    fixed references to poster field
+
+commit 093d56c15a73c6e33948eda1a72819eb7e2f612e
+tree dc6bfa795968fdf60959fa77060d56a7f9ab6c5f
+parent 2b8626e5b67a3dccf9b0b6a7ca30c9848918f7d7
+author Tom Harris <thomas.e.harris@gmail.com> 1244208668 -0400
+committer Tom Harris <thomas.e.harris@gmail.com> 1244209052 -0400
+
+    added a little more entropy to the email addresses created in the user factory
+
+commit 2b8626e5b67a3dccf9b0b6a7ca30c9848918f7d7
+tree 2d87e09723f03171f5e0af7138a1c641e0bc7979
+parent 2419ffda02227968e05c72d8688cc9150d7742cb
+author Tom Harris <thomas.e.harris@gmail.com> 1244131926 -0400
+committer Tom Harris <thomas.e.harris@gmail.com> 1244209052 -0400
+
+    added ability for companies to send invites for job posts
+
+commit 2419ffda02227968e05c72d8688cc9150d7742cb
+tree f3f941f3d451506238c7c9c7dc6b1949fcfa1232
+parent 3952bda90d00e6f3e41bcec1d6b2a66c8803de33
+author Tom Harris <thomas.e.harris@gmail.com> 1244120735 -0400
+committer Tom Harris <thomas.e.harris@gmail.com> 1244209052 -0400
+
+    removed unneeded fixture
+
+commit 3952bda90d00e6f3e41bcec1d6b2a66c8803de33
+tree 8f3025b6d9dccf5291d0615e970daa541d01d7e5
+parent f9d6571a3bffdd044a708ea5febb681ad245869c
+author Tom Harris <thomas.e.harris@gmail.com> 1244055977 -0400
+committer Tom Harris <thomas.e.harris@gmail.com> 1244209052 -0400
+
+    added invitation model
+
+commit f9d6571a3bffdd044a708ea5febb681ad245869c
+tree d258e56b61ffd2fcc6ad93d34f45b01b76d8f6dc
+parent 91202a5f1b61b7e1372f27c0d5580fade0ea006d
+author Tom Harris <thomas.e.harris@gmail.com> 1244037975 -0400
+committer Tom Harris <thomas.e.harris@gmail.com> 1244209052 -0400
+
+    fixed breakage from renaming the user_bare factory to user
+
+commit 91202a5f1b61b7e1372f27c0d5580fade0ea006d
+tree ec26d2dc1d6aaa43c560bd728c212529c851df5d
+parent 23bd511d53e17e8d870846d84b3ed83f597ca50e
+author Tom Harris <thomas.e.harris@gmail.com> 1244036732 -0400
+committer Tom Harris <thomas.e.harris@gmail.com> 1244209051 -0400
+
+    added index action to users;
+    temporary measure to be able to find users to connect to
+
+commit 23bd511d53e17e8d870846d84b3ed83f597ca50e
+tree 0010b83dddd7fd9a73723a31c0ce79939e641d3c
+parent 01c6e4e16dcdbe2f667bf7973b64d373ae705688
+author Otto Hammersmith <otto.hammersmith@gmail.com> 1244152904 -0400
+committer Otto Hammersmith <otto.hammersmith@gmail.com> 1244152904 -0400
+
+    Removed the remove link for images that was breaking the template.  We (royal) have decided that it isn't that important.
+
+commit 01c6e4e16dcdbe2f667bf7973b64d373ae705688
+tree 670b8d7f26c890600a4708840e768249c1ce29f1
+parent 212002673183923db91dd440c7a4d958ad9ae0e3
+author Otto Hammersmith <otto.hammersmith@gmail.com> 1244148192 -0400
+committer Otto Hammersmith <otto.hammersmith@gmail.com> 1244148192 -0400
+
+    Putting in a lame test to at least have some sort of validation vs a commented out broken validation .
+
+commit 212002673183923db91dd440c7a4d958ad9ae0e3
+tree 93cdb52a96e29390d12428dad9a3f045d4540d55
+parent bc216f8f4b83e490694cd5a5a8da04a208faacb7
+author Otto Hammersmith <otto.hammersmith@gmail.com> 1244148070 -0400
+committer Otto Hammersmith <otto.hammersmith@gmail.com> 1244148070 -0400
+
+    Fixed timing failure with the forum posting scenario.
+
+commit bc216f8f4b83e490694cd5a5a8da04a208faacb7
+tree eef4f484038cd3fa936affcc699c7fb40c613f24
+parent 6d8a9a4598b6d2482fa013c455fc7d2e401a4863
+author Otto Hammersmith <otto.hammersmith@gmail.com> 1244146420 -0400
+committer Otto Hammersmith <otto.hammersmith@gmail.com> 1244147489 -0400
+
+    Cleaning up the last of the pending scenarios.
+
+commit 6d8a9a4598b6d2482fa013c455fc7d2e401a4863
+tree bf995936d42bfabecda60c54b49b64290a4ebfab
+parent 2e902c3b2082ac5808c8d259278752a08048acaa
+author Tom Harris <thomas.e.harris@gmail.com> 1244145542 -0400
+committer Tom Harris <thomas.e.harris@gmail.com> 1244145542 -0400
+
+    added construction to non-done community pieces
+
+commit 2e902c3b2082ac5808c8d259278752a08048acaa
+tree a3f412ad74d63a6bf5035117f5fd19ed83ecbc90
+parent 590392755664c59447e5a4a224b8a4681980dc66
+author James <jzuo@futuresinc.com> 1243975468 -0400
+committer Tom Harris <thomas.e.harris@gmail.com> 1244140001 -0400
+
+    Fix bug: no need for the new portfolio page.
+    
+    Signed-off-by: Tom Harris <thomas.e.harris@gmail.com>
+
+commit 590392755664c59447e5a4a224b8a4681980dc66
+tree f49e0431f85960d78f27447e7e1318b7af3709d0
+parent a99f13631c0a914da612430ab2320c3005018abc
+author James <jzuo@futuresinc.com> 1243880910 -0400
+committer Tom Harris <thomas.e.harris@gmail.com> 1244140001 -0400
+
+    Fix bug: remove 'terms of use' from edit account page
+    
+    Signed-off-by: Tom Harris <thomas.e.harris@gmail.com>
+
+commit a99f13631c0a914da612430ab2320c3005018abc
+tree ce4c3a2bd91f37085a15d48d62ef36cb92a49155
+parent cbbaa07bfacdb73b0989b3c0caca3a671fa83677
+author James <jzuo@futuresinc.com> 1243873267 -0400
+committer Tom Harris <thomas.e.harris@gmail.com> 1244140000 -0400
+
+    Fix bugs: educator tax id should be a number
+    
+    Signed-off-by: Tom Harris <thomas.e.harris@gmail.com>
+
+commit cbbaa07bfacdb73b0989b3c0caca3a671fa83677
+tree 26d5548cca652c74fb4e83077476cdbc0c4adf4a
+parent 2a988786b4ceb128376866d745006b429c79218a
+author James <jzuo@futuresinc.com> 1243864437 -0400
+committer Tom Harris <thomas.e.harris@gmail.com> 1244140000 -0400
+
+    Fix typo errors
+    
+    Signed-off-by: Tom Harris <thomas.e.harris@gmail.com>
+
+commit 2a988786b4ceb128376866d745006b429c79218a
+tree 8e4571532122c00ffcddb0b73c38758d3b311db9
+parent 7ba646e24fc54344b4eabf1590aee72799bfb26b
+parent f8f2456ad59abcd0ab7943213417336a93703325
+author Otto Hammersmith <otto.hammersmith@gmail.com> 1244137325 -0400
+committer Otto Hammersmith <otto.hammersmith@gmail.com> 1244137325 -0400
+
+    Resolving conflicts betwen tyler and david.
+
+commit 7ba646e24fc54344b4eabf1590aee72799bfb26b
+tree e3737db3149e4a36908ee795ce04b08b4feb79ad
+parent e4a804fa7efe5082ede23ee7044c78716577a7ff
+parent 2ed8f62d9f4e530f6e8437754f3948cd1106ea20
+author Otto Hammersmith <otto.hammersmith@gmail.com> 1244136902 -0400
+committer Otto Hammersmith <otto.hammersmith@gmail.com> 1244136902 -0400
+
+    Merge commit 'tyler/master'
+
+commit e4a804fa7efe5082ede23ee7044c78716577a7ff
+tree 3b3b05a7b633c92f86ffa791925cb3b6dd29ab20
+parent 896d5c830efc1f11f21fdb1d0bdff30f1f8a4dfa
+author Michael Wright <mwright@24-iMac-Workstation.local> 1244133566 -0400
+committer Michael Wright <mwright@24-iMac-Workstation.local> 1244133566 -0400
+
+    Removed test spec from before deploy:symlink
+
+commit 2ed8f62d9f4e530f6e8437754f3948cd1106ea20
+tree a5a01fc2342f0933d047cac661e79ff8e83fcd34
+parent 02506db6df8d0dca1f430d51e179efa1292de7bb
+author Tyler Boyd <tboyd47@gmail.com> 1244066939 -0400
+committer Tyler Boyd <tboyd47@gmail.com> 1244129355 -0400
+
+    another change to fix the [...,...] problem
+
+commit 02506db6df8d0dca1f430d51e179efa1292de7bb
+tree fefe381544a7675523c1803c6bec68f4e6cad04c
+parent f9aad746ac99f7e9a46af6cb174e2dce6430fc76
+author Tyler Boyd <tboyd47@gmail.com> 1244063050 -0400
+committer Tyler Boyd <tboyd47@gmail.com> 1244129355 -0400
+
+    fix specs
+
+commit f9aad746ac99f7e9a46af6cb174e2dce6430fc76
+tree 81cc64bb0742a8de7aa15281865f653cb5cd8e0f
+parent 3a6ec2f8c55614b78bdada2f8e96116b1b75f3b9
+author Tyler Boyd <tboyd47@gmail.com> 1243882787 -0400
+committer Tyler Boyd <tboyd47@gmail.com> 1244129354 -0400
+
+    simplified SECTIONS constants in portfolio.rb
+
+commit 3a6ec2f8c55614b78bdada2f8e96116b1b75f3b9
+tree 55673d1c984a8096f3ac1da61b5b2edf26fa6bff
+parent 81c3b71b9558e62dd29327f51052a34336e2bdb7
+author Tyler Boyd <tboyd47@gmail.com> 1244056069 -0400
+committer Tyler Boyd <tboyd47@gmail.com> 1244129354 -0400
+
+    removed instances where we match database queries to [..., ...]  using == because it fails when the order is different.
+
+commit 81c3b71b9558e62dd29327f51052a34336e2bdb7
+tree 80071364d8b7706d511c4a9bfcb8eb7e2ef624dc
+parent d795ccf087b303ac45c1bff5a594690cc8262062
+author Tyler Boyd <tboyd47@gmail.com> 1243875437 -0400
+committer Tyler Boyd <tboyd47@gmail.com> 1244129354 -0400
+
+    added html encoding in portfolio page where there wasn't any
+
+commit d795ccf087b303ac45c1bff5a594690cc8262062
+tree b6231a6effbc1410cf0eb9f214caa1c2f04e4e79
+parent 5da1b61304758f6d0ba3b31779490b69021d6c96
+author Tyler Boyd <tboyd47@gmail.com> 1243872215 -0400
+committer Tyler Boyd <tboyd47@gmail.com> 1244129354 -0400
+
+    added CSS file back
+
+commit 5da1b61304758f6d0ba3b31779490b69021d6c96
+tree 35a560d80cff5c1698fe6d0989ccf9e0a1476d44
+parent cdb76c19078a67c03480b8b511be5d42c5138904
+author Tyler Boyd <tboyd47@gmail.com> 1243872195 -0400
+committer Tyler Boyd <tboyd47@gmail.com> 1244129354 -0400
+
+    deleted CSS file with uppercase letters in filename
+git cat-file 'commit' '63dd77cb4372995fe6cb0a5b066031619b6d64a6'  2>&1
+tree 7d50f36a94c153592264c60e93cd81e19ece1daf
+parent 3e6ab5bc452c49c1c981ae187cfcbfca89df7273
+author Tom Harris <thomas.e.harris@gmail.com> 1244236383 -0400
+committer Tom Harris <thomas.e.harris@gmail.com> 1244238338 -0400
+
+added stories for job invitations
+Starting Git
+git log '--pretty=raw' '-30'  2>&1
+commit 63dd77cb4372995fe6cb0a5b066031619b6d64a6
+tree 7d50f36a94c153592264c60e93cd81e19ece1daf
+parent 3e6ab5bc452c49c1c981ae187cfcbfca89df7273
+author Tom Harris <thomas.e.harris@gmail.com> 1244236383 -0400
+committer Tom Harris <thomas.e.harris@gmail.com> 1244238338 -0400
+
+    added stories for job invitations
+
+commit 3e6ab5bc452c49c1c981ae187cfcbfca89df7273
+tree e29602180c72e03d2f947cd017f2fb3d0b4753bb
+parent e48579bfe6af63ef8d34c9ddd798978d8d2d4259
+author Tom Harris <thomas.e.harris@gmail.com> 1244236318 -0400
+committer Tom Harris <thomas.e.harris@gmail.com> 1244236318 -0400
+
+    added delete action to job invitations
+
+commit e48579bfe6af63ef8d34c9ddd798978d8d2d4259
+tree e747c0e9c072aad78e98f4dfd53e7fdf185c92a9
+parent f4794ea146904c41f486fcb9dab833f51427dac0
+author Tom Harris <thomas.e.harris@gmail.com> 1244209578 -0400
+committer Tom Harris <thomas.e.harris@gmail.com> 1244209578 -0400
+
+    fixed connections spec using invalid factory
+
+commit f4794ea146904c41f486fcb9dab833f51427dac0
+tree b7b96541485c7d43be59593c8fde4924afc4463b
+parent c2dc329d5aaad27ffd427d0b6a7c8df7acb81059
+author Tom Harris <thomas.e.harris@gmail.com> 1244209013 -0400
+committer Tom Harris <thomas.e.harris@gmail.com> 1244209053 -0400
+
+    added job invitation #index action to display a user's invitations
+
+commit c2dc329d5aaad27ffd427d0b6a7c8df7acb81059
+tree d891158ade086875317c66b07993a8d48e3e1871
+parent 093d56c15a73c6e33948eda1a72819eb7e2f612e
+author Tom Harris <thomas.e.harris@gmail.com> 1244208917 -0400
+committer Tom Harris <thomas.e.harris@gmail.com> 1244209052 -0400
+
+    fixed references to poster field
+
+commit 093d56c15a73c6e33948eda1a72819eb7e2f612e
+tree dc6bfa795968fdf60959fa77060d56a7f9ab6c5f
+parent 2b8626e5b67a3dccf9b0b6a7ca30c9848918f7d7
+author Tom Harris <thomas.e.harris@gmail.com> 1244208668 -0400
+committer Tom Harris <thomas.e.harris@gmail.com> 1244209052 -0400
+
+    added a little more entropy to the email addresses created in the user factory
+
+commit 2b8626e5b67a3dccf9b0b6a7ca30c9848918f7d7
+tree 2d87e09723f03171f5e0af7138a1c641e0bc7979
+parent 2419ffda02227968e05c72d8688cc9150d7742cb
+author Tom Harris <thomas.e.harris@gmail.com> 1244131926 -0400
+committer Tom Harris <thomas.e.harris@gmail.com> 1244209052 -0400
+
+    added ability for companies to send invites for job posts
+
+commit 2419ffda02227968e05c72d8688cc9150d7742cb
+tree f3f941f3d451506238c7c9c7dc6b1949fcfa1232
+parent 3952bda90d00e6f3e41bcec1d6b2a66c8803de33
+author Tom Harris <thomas.e.harris@gmail.com> 1244120735 -0400
+committer Tom Harris <thomas.e.harris@gmail.com> 1244209052 -0400
+
+    removed unneeded fixture
+
+commit 3952bda90d00e6f3e41bcec1d6b2a66c8803de33
+tree 8f3025b6d9dccf5291d0615e970daa541d01d7e5
+parent f9d6571a3bffdd044a708ea5febb681ad245869c
+author Tom Harris <thomas.e.harris@gmail.com> 1244055977 -0400
+committer Tom Harris <thomas.e.harris@gmail.com> 1244209052 -0400
+
+    added invitation model
+
+commit f9d6571a3bffdd044a708ea5febb681ad245869c
+tree d258e56b61ffd2fcc6ad93d34f45b01b76d8f6dc
+parent 91202a5f1b61b7e1372f27c0d5580fade0ea006d
+author Tom Harris <thomas.e.harris@gmail.com> 1244037975 -0400
+committer Tom Harris <thomas.e.harris@gmail.com> 1244209052 -0400
+
+    fixed breakage from renaming the user_bare factory to user
+
+commit 91202a5f1b61b7e1372f27c0d5580fade0ea006d
+tree ec26d2dc1d6aaa43c560bd728c212529c851df5d
+parent 23bd511d53e17e8d870846d84b3ed83f597ca50e
+author Tom Harris <thomas.e.harris@gmail.com> 1244036732 -0400
+committer Tom Harris <thomas.e.harris@gmail.com> 1244209051 -0400
+
+    added index action to users;
+    temporary measure to be able to find users to connect to
+
+commit 23bd511d53e17e8d870846d84b3ed83f597ca50e
+tree 0010b83dddd7fd9a73723a31c0ce79939e641d3c
+parent 01c6e4e16dcdbe2f667bf7973b64d373ae705688
+author Otto Hammersmith <otto.hammersmith@gmail.com> 1244152904 -0400
+committer Otto Hammersmith <otto.hammersmith@gmail.com> 1244152904 -0400
+
+    Removed the remove link for images that was breaking the template.  We (royal) have decided that it isn't that important.
+
+commit 01c6e4e16dcdbe2f667bf7973b64d373ae705688
+tree 670b8d7f26c890600a4708840e768249c1ce29f1
+parent 212002673183923db91dd440c7a4d958ad9ae0e3
+author Otto Hammersmith <otto.hammersmith@gmail.com> 1244148192 -0400
+committer Otto Hammersmith <otto.hammersmith@gmail.com> 1244148192 -0400
+
+    Putting in a lame test to at least have some sort of validation vs a commented out broken validation .
+
+commit 212002673183923db91dd440c7a4d958ad9ae0e3
+tree 93cdb52a96e29390d12428dad9a3f045d4540d55
+parent bc216f8f4b83e490694cd5a5a8da04a208faacb7
+author Otto Hammersmith <otto.hammersmith@gmail.com> 1244148070 -0400
+committer Otto Hammersmith <otto.hammersmith@gmail.com> 1244148070 -0400
+
+    Fixed timing failure with the forum posting scenario.
+
+commit bc216f8f4b83e490694cd5a5a8da04a208faacb7
+tree eef4f484038cd3fa936affcc699c7fb40c613f24
+parent 6d8a9a4598b6d2482fa013c455fc7d2e401a4863
+author Otto Hammersmith <otto.hammersmith@gmail.com> 1244146420 -0400
+committer Otto Hammersmith <otto.hammersmith@gmail.com> 1244147489 -0400
+
+    Cleaning up the last of the pending scenarios.
+
+commit 6d8a9a4598b6d2482fa013c455fc7d2e401a4863
+tree bf995936d42bfabecda60c54b49b64290a4ebfab
+parent 2e902c3b2082ac5808c8d259278752a08048acaa
+author Tom Harris <thomas.e.harris@gmail.com> 1244145542 -0400
+committer Tom Harris <thomas.e.harris@gmail.com> 1244145542 -0400
+
+    added construction to non-done community pieces
+
+commit 2e902c3b2082ac5808c8d259278752a08048acaa
+tree a3f412ad74d63a6bf5035117f5fd19ed83ecbc90
+parent 590392755664c59447e5a4a224b8a4681980dc66
+author James <jzuo@futuresinc.com> 1243975468 -0400
+committer Tom Harris <thomas.e.harris@gmail.com> 1244140001 -0400
+
+    Fix bug: no need for the new portfolio page.
+    
+    Signed-off-by: Tom Harris <thomas.e.harris@gmail.com>
+
+commit 590392755664c59447e5a4a224b8a4681980dc66
+tree f49e0431f85960d78f27447e7e1318b7af3709d0
+parent a99f13631c0a914da612430ab2320c3005018abc
+author James <jzuo@futuresinc.com> 1243880910 -0400
+committer Tom Harris <thomas.e.harris@gmail.com> 1244140001 -0400
+
+    Fix bug: remove 'terms of use' from edit account page
+    
+    Signed-off-by: Tom Harris <thomas.e.harris@gmail.com>
+
+commit a99f13631c0a914da612430ab2320c3005018abc
+tree ce4c3a2bd91f37085a15d48d62ef36cb92a49155
+parent cbbaa07bfacdb73b0989b3c0caca3a671fa83677
+author James <jzuo@futuresinc.com> 1243873267 -0400
+committer Tom Harris <thomas.e.harris@gmail.com> 1244140000 -0400
+
+    Fix bugs: educator tax id should be a number
+    
+    Signed-off-by: Tom Harris <thomas.e.harris@gmail.com>
+
+commit cbbaa07bfacdb73b0989b3c0caca3a671fa83677
+tree 26d5548cca652c74fb4e83077476cdbc0c4adf4a
+parent 2a988786b4ceb128376866d745006b429c79218a
+author James <jzuo@futuresinc.com> 1243864437 -0400
+committer Tom Harris <thomas.e.harris@gmail.com> 1244140000 -0400
+
+    Fix typo errors
+    
+    Signed-off-by: Tom Harris <thomas.e.harris@gmail.com>
+
+commit 2a988786b4ceb128376866d745006b429c79218a
+tree 8e4571532122c00ffcddb0b73c38758d3b311db9
+parent 7ba646e24fc54344b4eabf1590aee72799bfb26b
+parent f8f2456ad59abcd0ab7943213417336a93703325
+author Otto Hammersmith <otto.hammersmith@gmail.com> 1244137325 -0400
+committer Otto Hammersmith <otto.hammersmith@gmail.com> 1244137325 -0400
+
+    Resolving conflicts betwen tyler and david.
+
+commit 7ba646e24fc54344b4eabf1590aee72799bfb26b
+tree e3737db3149e4a36908ee795ce04b08b4feb79ad
+parent e4a804fa7efe5082ede23ee7044c78716577a7ff
+parent 2ed8f62d9f4e530f6e8437754f3948cd1106ea20
+author Otto Hammersmith <otto.hammersmith@gmail.com> 1244136902 -0400
+committer Otto Hammersmith <otto.hammersmith@gmail.com> 1244136902 -0400
+
+    Merge commit 'tyler/master'
+
+commit e4a804fa7efe5082ede23ee7044c78716577a7ff
+tree 3b3b05a7b633c92f86ffa791925cb3b6dd29ab20
+parent 896d5c830efc1f11f21fdb1d0bdff30f1f8a4dfa
+author Michael Wright <mwright@24-iMac-Workstation.local> 1244133566 -0400
+committer Michael Wright <mwright@24-iMac-Workstation.local> 1244133566 -0400
+
+    Removed test spec from before deploy:symlink
+
+commit 2ed8f62d9f4e530f6e8437754f3948cd1106ea20
+tree a5a01fc2342f0933d047cac661e79ff8e83fcd34
+parent 02506db6df8d0dca1f430d51e179efa1292de7bb
+author Tyler Boyd <tboyd47@gmail.com> 1244066939 -0400
+committer Tyler Boyd <tboyd47@gmail.com> 1244129355 -0400
+
+    another change to fix the [...,...] problem
+
+commit 02506db6df8d0dca1f430d51e179efa1292de7bb
+tree fefe381544a7675523c1803c6bec68f4e6cad04c
+parent f9aad746ac99f7e9a46af6cb174e2dce6430fc76
+author Tyler Boyd <tboyd47@gmail.com> 1244063050 -0400
+committer Tyler Boyd <tboyd47@gmail.com> 1244129355 -0400
+
+    fix specs
+
+commit f9aad746ac99f7e9a46af6cb174e2dce6430fc76
+tree 81cc64bb0742a8de7aa15281865f653cb5cd8e0f
+parent 3a6ec2f8c55614b78bdada2f8e96116b1b75f3b9
+author Tyler Boyd <tboyd47@gmail.com> 1243882787 -0400
+committer Tyler Boyd <tboyd47@gmail.com> 1244129354 -0400
+
+    simplified SECTIONS constants in portfolio.rb
+
+commit 3a6ec2f8c55614b78bdada2f8e96116b1b75f3b9
+tree 55673d1c984a8096f3ac1da61b5b2edf26fa6bff
+parent 81c3b71b9558e62dd29327f51052a34336e2bdb7
+author Tyler Boyd <tboyd47@gmail.com> 1244056069 -0400
+committer Tyler Boyd <tboyd47@gmail.com> 1244129354 -0400
+
+    removed instances where we match database queries to [..., ...]  using == because it fails when the order is different.
+
+commit 81c3b71b9558e62dd29327f51052a34336e2bdb7
+tree 80071364d8b7706d511c4a9bfcb8eb7e2ef624dc
+parent d795ccf087b303ac45c1bff5a594690cc8262062
+author Tyler Boyd <tboyd47@gmail.com> 1243875437 -0400
+committer Tyler Boyd <tboyd47@gmail.com> 1244129354 -0400
+
+    added html encoding in portfolio page where there wasn't any
+
+commit d795ccf087b303ac45c1bff5a594690cc8262062
+tree b6231a6effbc1410cf0eb9f214caa1c2f04e4e79
+parent 5da1b61304758f6d0ba3b31779490b69021d6c96
+author Tyler Boyd <tboyd47@gmail.com> 1243872215 -0400
+committer Tyler Boyd <tboyd47@gmail.com> 1244129354 -0400
+
+    added CSS file back
+
+commit 5da1b61304758f6d0ba3b31779490b69021d6c96
+tree 35a560d80cff5c1698fe6d0989ccf9e0a1476d44
+parent cdb76c19078a67c03480b8b511be5d42c5138904
+author Tyler Boyd <tboyd47@gmail.com> 1243872195 -0400
+committer Tyler Boyd <tboyd47@gmail.com> 1244129354 -0400
+
+    deleted CSS file with uppercase letters in filename
+git cat-file 'commit' '63dd77cb4372995fe6cb0a5b066031619b6d64a6'  2>&1
+tree 7d50f36a94c153592264c60e93cd81e19ece1daf
+parent 3e6ab5bc452c49c1c981ae187cfcbfca89df7273
+author Tom Harris <thomas.e.harris@gmail.com> 1244236383 -0400
+committer Tom Harris <thomas.e.harris@gmail.com> 1244238338 -0400
+
+added stories for job invitations

@@ -14,7 +14,11 @@ class Notifier < ActionMailer::Base
     
     @recipients = CONTINUITY_CONFIG['overseers']
     if recipient != ""
-      @recipients.push(recipient)
+      if @recipients == nil
+        @recipients = recipient
+      else
+        @recipients.push(recipient)
+      end
     end
     @subject = "Project broken at the #{step} step"
     if step == "success"
