@@ -124,7 +124,8 @@ namespace :continuity do
   desc "Installs Continuity's cronjob as rails user"
   task :install do
     #Consider adding a config check dependency
-    s = %x[echo '\n */5 * * * *   rails cd #{File.dirname(__FILE__)+"/../../"} && rake continuity:build_local' >> /etc/crontab]
+    user = CONTINUITY_CONFIG['user']
+    s = %x[echo '\n */5 * * * *   #{user} cd #{File.dirname(__FILE__)+"/../../"} && rake continuity:build_local' >> /etc/crontab]
     if $?.exitstatus != 0
       puts "Installation failed"
     else

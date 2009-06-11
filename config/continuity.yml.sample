@@ -4,7 +4,8 @@ project_dir: /path/to/project/ #Path to your project
 overseers: [fake1@example.org, fake2@example.org] ## These email addresses will always get the e-mails
 mail_from: ci@example.org #The from address of the e-mail
 deploy_command: git pull #Whatever command you use to update your code, this could be a cap command (cap deploy:migrations), or git pull as seen here, or just about anything
-environment: production #The rails environment to run your app in
+environment: production #The rails environment to run your app in.
+user: rails #user to install as
 
 action_mailer: ##Action mailer configuration items
     address: mail.example.org
