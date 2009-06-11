@@ -57,7 +57,7 @@ namespace :continuity do
     #### git pull new commits ###
     s = %x[cd #{project_dir} && #{deploy}]
     exit_status = $?.exitstatus
-    email_address = %x[git log  --pretty=format:%ae FETCH_HEAD~1..FETCH_HEAD]
+    email_address = %x[cd #{project_dir} && git fetch && git log  --pretty=format:%ae FETCH_HEAD~1..FETCH_HEAD]
     step = "\"deploy\""
     if exit_status != 0
       system("echo '#{s}' >> deploy_broken")
