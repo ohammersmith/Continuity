@@ -31,7 +31,7 @@ namespace :continuity do
   desc "Check to see if github has updated"
   task :check => [:check_lock, :environment] do
     project_dir = CONTINUITY_CONFIG['project_dir']
-    s = %x[cd #{project_dir} && git fetch && git diff --quiet ...FETCH_HEAD] # --quiet implies --exit-code
+    s = %x[cd #{project_dir} && git fetch && git diff --quiet ...FETCH_HEAD 2>&1] # --quiet implies --exit-code
     new_version = $?.exitstatus
     if new_version == 0 and !File.exists?('force')
       puts "No changes since last pull"
@@ -55,9 +55,9 @@ namespace :continuity do
 
     
     #### git pull new commits ###
-    s = %x[cd #{project_dir} && #{deploy}]
+    s = %x[cd #{project_dir} && #{deploy} 2>&1]
     exit_status = $?.exitstatus
-    email_address = %x[cd #{project_dir} && git fetch && git log  --pretty=format:%ae FETCH_HEAD~1..FETCH_HEAD]
+    email_address = %x[cd #{project_dir} && git fetch && git log  --pretty=format:%ae FETCH_HEAD~1..FETCH_HEAD 2>&1]
     step = "\"deploy\""
     if exit_status != 0
       system("echo '#{s}' >> deploy_broken")
@@ -68,31 +68,31 @@ namespace :continuity do
     
     ### git submodule update --init ###
     step = "\"git submodule update\""
-    s = %x[cd #{project_dir} && git submodule update --init]
+    s = %x[cd #{project_dir} && git submodule update --init 2>&1]
     exit_status = $?.exitstatus
     handler.handle_status(exit_status, step, s, email_address)
     
     ### rake db:migrate:reset ###
     step = "\"rake db:migrate:reset\""
-    s = %x[ cd #{project_dir} && rake RAILS_ENV=#{env} db:migrate:reset]
+    s = %x[ cd #{project_dir} && rake RAILS_ENV=#{env} db:migrate:reset 2>&1]
     exit_status = $?.exitstatus
     handler.handle_status(exit_status, step, s, email_address)
     
     ### rake:spec ###
     step = "\"rake test spec\""
-    s = %x[ cd #{project_dir} && rake test spec]
+    s = %x[ cd #{project_dir} && rake test spec 2>&1]
     exit_status = $?.exitstatus
     handler.handle_status(exit_status, step, s, email_address)
     
     ### rake features:default ###
     step = "\"rake features:default\""
-    s = %x[ cd #{project_dir} && rake features:default]
+    s = %x[ cd #{project_dir} && rake features:default 2>&1]
     exit_status = $?.exitstatus
     handler.handle_status(exit_status, step, s, email_address)
     
     ### rake features:selenium
     step = "\"rake features:selenium\""
-    s = %x[ cd #{project_dir} && rake features:selenium]
+    s = %x[ cd #{project_dir} && rake features:selenium 2>&1]
     exit_status = $?.exitstatus
     handler.handle_status(exit_status, step, s, email_address)
   end
