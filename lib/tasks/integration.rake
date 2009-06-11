@@ -40,6 +40,8 @@ namespace :continuity do
     end
     #This is a hack put in place to fix the deploy bug until I figure out persistence
     if File.exists?('deploy_broken')
+      puts "Deploy Broken!"
+      FileUtils.rm_f 'build.pid'
       exit 0
     end
 
