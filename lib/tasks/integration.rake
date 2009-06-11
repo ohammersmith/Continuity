@@ -38,6 +38,7 @@ namespace :continuity do
       FileUtils.rm_f 'build.pid'
       exit 0
     end
+    #This is a hack put in place to fix the deploy bug until I figure out persistence
     if File.exists?('deploy_broken')
       exit 0
     end
@@ -64,9 +65,6 @@ namespace :continuity do
     handler.handle_status(exit_status, step, s, email_address)    
     #Breaks when the compiled version of grep does not support -m, and a git merge was performed due to the git@github.com:/user/repo line matching
     email_address = %x[cd #{project_dir} && git log --pretty=format:%ae -1..HEAD]
-    puts email_address
-    email_address = "mwright@futuresinc.com"
-    
     
     ### git submodule update --init ###
     step = "\"git submodule update\""
@@ -93,6 +91,10 @@ namespace :continuity do
     handler.handle_status(exit_status, step, s, email_address)
     
     ### rake features:selenium
+    step = "\"rake features:selenium\""
+    s = %x[ cd #{project_dir} && rake features:selenium]
+    exit_status = $?.exitstatus
+    handler.handle_status(exit_status, step, s, email_address)
   end
   
   desc "Cleans up after CI has been run (automatically run)"
@@ -110,7 +112,7 @@ namespace :continuity do
   end
   
   
-  desc "Test e-mail"
+  desc "Test e-mail functionality based on continuity.yml config"
   task :email_test => :environment do
     email = ""
     step = "test"
@@ -124,12 +126,13 @@ namespace :continuity do
     #Consider adding a config check dependency
     s = %x[echo '\n */5 * * * *   rails cd #{File.dirname(__FILE__)+"/../../"} && rake continuity:build_local' >> /etc/crontab]
     if $?.exitstatus != 0
-      puts "Installation failed, check your permissions."
+      puts "Installation failed"
     else
       puts "Cronjob installed successfully"
     end
   end
   
+  desc "Puts Continuity into test mode, allowing for continuous deployment whether there is a new push or not"
   task :test_prepare do
     system("touch force")
   end
