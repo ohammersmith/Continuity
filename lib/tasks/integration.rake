@@ -75,8 +75,8 @@ namespace :continuity do
     handler.handle_status(exit_status, step, s, email_address)
     
     ### rake db:migrate:reset ###
-    step = "\"rake db:migrate:reset\""
-    s = %x[ cd #{project_dir} && rake RAILS_ENV=#{env} db:migrate:reset 2>&1]
+    step = "\"rake db:skewer\""
+    s = %x[ cd #{project_dir} && rake skewer 2>&1]
     exit_status = $?.exitstatus
     handler.handle_status(exit_status, step, s, email_address)
     
